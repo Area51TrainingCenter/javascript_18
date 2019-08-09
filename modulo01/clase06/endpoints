@@ -1,0 +1,27 @@
+Registro de usuario (1 vez)
+https://sminnova.com/recurso_clase/api/usuarios/agregar
+
+Parametros a enviar
+nombres
+apellidos
+correo
+password
+
+Login
+https://sminnova.com/recurso_clase/api/usuario/login
+correo
+password
+
+Registro de Contacto
+https://sminnova.com/recurso_clase/api/contacto/agregar
+
+Parametros a enviar
+nombres
+apellidos
+telefono
+id_usuario
+
+listado de Contacto por usuario
+https://sminnova.com/recurso_clase/api/contacto/listado
+Parametros a enviar
+id

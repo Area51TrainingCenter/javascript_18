@@ -14,6 +14,7 @@ xhr.onreadystatechange=function(){
 		if(xhr.status==200){
 			console.log(xhr);
 			let resultado=JSON.parse(xhr.response);
+			
 			console.log(resultado);	
 			// yo estoy seguro que tengo respuesta
 		}
@@ -27,6 +28,14 @@ xhr.onreadystatechange=function(){
 
 
 console.log("hola");
+
+
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+
+let login="https://reqres.in/api/users"
 
 
 

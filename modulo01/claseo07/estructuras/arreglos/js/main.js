@@ -153,9 +153,7 @@ let buscar="LUN";
 console.log(dias_string.includes(buscar.toLowerCase())); // true
 
 
-
-
-for(let i=0;i<0;i++){
+ for(let i=0;i<0;i++){
 
 }
 

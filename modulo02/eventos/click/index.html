@@ -38,17 +38,108 @@ padding: 20px;
 	
 	<nav class="listado">
 		<ul>
-			<li>Opcion1</li>
-			<li>Opcion2</li>
-			<li>Opcion3</li>
+			<li id="opcion1">Opcion1</li>
+			<li id="opcion2">Opcion2</li>
+			<li id="opcion3">Opcion3</li>
 		</ul>
 	</nav>
 	<section>
 
-	<div class="box1"></div>
-	<div class="box2"></div>
-	<div class="box3"></div>
+	<div id="box1" class="box1" data-estado="0"></div>
+	<div id="box2" class="box2"></div>
+	<div id="box3" class="box3"></div>
 	</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 </body>
 </html>
+
+
+<script>
+	let elemento1= document.getElementById('opcion1');
+	let box1=document.getElementById("box1");
+
+	elemento1.addEventListener("click",function(){
+		
+			/*box1.style.opacity="0";*/
+			/*box1.style.marginTop="50px";*/
+		/*	box1.animate({opacity:0},2000,function(){});*/
+			/*box1.style.opacity="0";*/
+		
+
+		 $("#box1").animate({
+		 	marginTop:"50px",
+   			opacity: 0}, 1000, function() {
+			});
+
+		  $("#box2").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+
+		   $("#box3").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+
+
+	})
+
+
+	let elemento2= document.getElementById('opcion2');
+
+	elemento2.addEventListener("click",function(){
+		
+			/*box1.style.opacity="0";*/
+			/*box1.style.marginTop="50px";*/
+		/*	box1.animate({opacity:0},2000,function(){});*/
+			/*box1.style.opacity="0";*/
+		
+
+		 $("#box2").animate({
+		 	marginTop:"50px",
+   			opacity: 0}, 1000, function() {
+			});
+
+		  $("#box1").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+
+		   $("#box3").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+
+
+	})
+
+
+	let elemento3= document.getElementById('opcion3');
+
+	elemento3.addEventListener("click",function(){
+		
+			/*box1.style.opacity="0";*/
+			/*box1.style.marginTop="50px";*/
+		/*	box1.animate({opacity:0},2000,function(){});*/
+			/*box1.style.opacity="0";*/
+		
+
+		 $("#box2").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+
+		  $("#box1").animate({
+		 	marginTop:"20px",
+   			opacity: 1}, 1000, function() {
+			});
+		    $("#box3").animate({
+		 	marginTop:"50px",
+   			opacity: 0}, 1000, function() {
+			});
+
+	})
+
+</script>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	ul{
+		text-align: center;
+		margin-top: 20px;
+	}
+	ul li{
+display: inline-block;
+vertical-align: top;
+padding: 20px;
+	}
+		div{
+			width: 200px;
+			height: 200px;
+			
+			margin:20px 0px;
+			transition:all 0.4s linear;
+		}
+		section{
+			display: flex;
+			justify-content: center;
+		}
+		.box1{
+			background-color: tomato;
+		}
+		.box2{
+			background-color: silver;
+		}
+		.box3{
+			background-color: gold;
+		}
+		.seleccionado{
+		margin-top: 50px;
+			opacity: 0;
+			/*transform: rotate(360deg) scale(0);
+			opacity: 0;*/
+			/*transform: rotateY(90deg);*/
+			/*
+			transform: scale(1.3);*/
+		}
+		#fondo{
+			width: 100%;
+			height: 300px;
+			background-image:url("https://upload.wikimedia.org/wikipedia/commons/5/5f/Calle_Principal_del_Centro_C%C3%ADvicol_%28al_fondo_Casa_de_Gobierno%29.jpg");
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+	</style>
+</head>
+<body>
+	
+	<nav class="listado">
+		<ul>
+			<li id="opcion1">Opcion1</li>
+			<li id="opcion2">Opcion2</li>
+			<li id="opcion3">Opcion3</li>
+		</ul>
+	</nav>
+	<section>
+
+	<div id="box1" class="box1" data-estado="0"></div>
+	<div id="box2" class="box2"></div>
+	<div id="box3" class="box3"></div>
+
+	</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</body>
+</html>
+
+
+<script>
+	let elemento1= document.getElementById('opcion1');
+	let box1=document.getElementById("box1");
+
+	elemento1.addEventListener("click",function(){
+			/*limpiar();
+			box1.classList.add("seleccionado");*/
+
+			let estado=box1.getAttribute("data-estado");
+			// estado=0
+			/*if(estado==0){
+				box1.style.backgroundColor="blue";
+			}
+			else if(estado==1){
+					box1.style.backgroundColor="red";
+			}
+			else if(estado==2){
+				box1.style.backgroundColor="green";
+			}	
+			else{
+				box1.style.backgroundColor="black";
+			}
+			*/
+			animacionElemento(estado);
+			
+			let nuevo_estado=parseInt(estado)+1;
+
+			box1.setAttribute("data-estado",nuevo_estado);
+			console.log(estado);
+	})
+
+
+	
+	function limpiar(){
+		box1.classList.remove("seleccionado");
+		box2.classList.remove("seleccionado");
+		box3.classList.remove("seleccionado");
+	}
+
+	function animacionElemento(estado){
+		switch(estaod){
+			case 0:
+				break;
+			
+			case 1:
+				break;
+			
+			case 2:
+				break;
+			
+			case 3:
+				break;
+
+			default:
+				break;
+		}
+	}
+
+</script>

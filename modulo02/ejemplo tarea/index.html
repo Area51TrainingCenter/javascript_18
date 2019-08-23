@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		.registrar-tarea input{
+			flex-grow: 1;
+			margin-right: 20px;
+
+		}
+		.terminada{
+			float: right;
+			font-weight: bold;
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-5">
+			<h2 class="text-center h4 mb-5">Listado de tareas</h2>		
+		
+			<div class=" w-50 m-auto">
+				<form action="" class="registrar-tarea">
+					<div class="form-group d-flex" >
+						<input  id="nombre_tarea" type="text"><button  type="button" id="registrar_tarea" class="btn-success">Registrar</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="col-12">
+				<ul class="list-group" id="listado_tareas">
+					
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	
+</div>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+	<script src="js/tarea.js"></script>
+</body>
+</html>

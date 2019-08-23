@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	/*setTimeout(function(){
+		console.log("esto se ejecuta despues de 2 segundos");
+	},2000)*/
+	setInterval(function(){
+		console.log("1 segundo");
+	},1000)
+
+	let dni="12312323";
+	let promesaDNI=new Promise((resolve,reject)=>{
+		//consulta a servicios de reniec // 10s
+		
+		setTimeout(function(){
+			resolve("respuesta de dni");
+		},3000)
+		
+
+	}).then((data)=>{
+		console.log(data);
+
+	}).catch()
+
+	let promesaEstados=new Promise((resolve,reject)=>{
+		// consulta a bancos  demora 15 segundos
+		setTimeout(function(){
+			resolve("respuesta de banco");			
+		},2000)
+
+	
+	}).then((data)=>{
+		console.log(data);
+	}).catch(()=>{});
+
+
+</script>

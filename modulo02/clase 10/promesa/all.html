@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	let peticion1=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+				resolve("termino la 1era peticion") 	
+		},5000);
+	})
+	let peticion2=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			
+				reject("termino la 2era peticion") 
+			
+		},3000);
+	})
+	let peticion3=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			
+				resolve("termino la eera peticion") 	
+		},2000);
+	})
+
+
+	Promise.all([peticion1,peticion2,peticion3]).then((data)=>{
+		console.log(data);
+	}).catch((data)=>{
+		console.log("se ejecuto el error en :")
+		console.log(data)
+	})
+	
+
+</script>

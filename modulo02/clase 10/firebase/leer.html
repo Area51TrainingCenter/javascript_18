@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <ul id="listado">
+    
+  </ul>
+  
+</body>
+</html>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBryurBCjqTOdDk4OD_hUZuc3GMXpByD5s",
+    authDomain: "democlase-9be36.firebaseapp.com",
+    databaseURL: "https://democlase-9be36.firebaseio.com",
+    projectId: "democlase-9be36",
+    storageBucket: "",
+    messagingSenderId: "1082219424850",
+    appId: "1:1082219424850:web:64cdbf087f80b717"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  let baseDatos=firebase.database();
+  console.log(baseDatos);
+/*
+  function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+  }
+*/
+
+  function leerDatos(){
+    let referencia=baseDatos.ref("/tareas")
+    referencia.on("value",function(datos){  
+        //console.log(datos.val());
+        let resultado=datos.val();
+        let temporal="";
+        for(let propiedad in datos.val()){
+        //  console.log(propiedad);
+          temporal=temporal+`<li>${resultado[propiedad].nombre_tarea}</li>`
+          console.log(resultado[propiedad]);
+
+        }
+        document.getElementById('listado').innerHTML=temporal;
+    })
+  }
+
+  leerDatos();
+
+</script>

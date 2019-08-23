@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+
+	let id_obtenido="";
+	let xhr=new XMLHttpRequest();
+	let url="https://jsonplaceholder.typicode.com/users";
+	xhr.open("GET",url);
+	xhr.send();
+
+
+	//20 segundos
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				let usuarios=JSON.parse(xhr.response)
+				//console.log(usuarios[0].id);
+				
+				id_obtenido=usuarios[2].id;	
+				//console.log("primer console"+id_obtenido);
+
+
+
+				let url2="https://jsonplaceholder.typicode.com/posts?userId="+id_obtenido;
+				let xhr2=new XMLHttpRequest();
+				xhr2.open("GET",url2);
+				xhr2.send();
+
+				xhr2.onreadystatechange=function(){
+					if(xhr2.readyState==4){
+						if(xhr2.status==200){
+							let respuesta=JSON.parse(xhr2.response)
+							console.log(respuesta);
+							
+
+							
+						}
+					}
+				}
+
+
+
+
+			}
+		}
+	}
+
+	console.log("segundo console"+id_obtenido);
+
+	
+
+</script>

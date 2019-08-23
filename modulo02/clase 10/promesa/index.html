@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+	/*let promesa=new Promise((resolve,reject)=>{
+		//logica programacion
+		edad=20;
+		if(edad>18){
+			resolve();	// ejecuta el then() 	
+		}
+		else{
+			reject();	 // ejecuta el catch()
+		}
+	}).then(()=>{ // asociado a que la promesa se realizo con éxito
+		console.log("estoy en el then");
+	})
+	.catch(()=>{ // la promesa encontro un error;
+		console.log("estoy en el catch");
+	})
+*/
+
+
+	let peticion=new Promise((resolve,reject)=>{
+		let xhr =new XMLHttpRequest();
+		let url="https://jsonplaceholder.typicode.com/users";
+		xhr.open("GET",url);
+		xhr.send();
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status==200){
+					let usuarios=JSON.parse(xhr.response);
+					
+					resolve(usuarios[4].id);
+				}
+			}
+		}
+	
+
+	}).then((data)=>{
+		/*console.log(data);
+		console.log("estoy en el then");*/
+
+			let url2="https://jsonplaceholder.typicode.com/posts?userId="+data;
+				let xhr2=new XMLHttpRequest();
+				xhr2.open("GET",url2);
+				xhr2.send();
+
+				xhr2.onreadystatechange=function(){
+					if(xhr2.readyState==4){
+						if(xhr2.status==200){
+							let respuesta=JSON.parse(xhr2.response)
+							console.log(respuesta);
+							
+
+							
+						}
+					}
+			}
+
+
+
+
+
+	})
+
+
+
+
+
+</script>

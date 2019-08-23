@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	let peticion1=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			xhr.status==200
+			 {
+				resolve("termino la 1era peticion") 	
+			 }
+			
+		},5000);
+	})
+
+	let peticion2=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			xhr.status==200{
+				resolve("termino la 2da peticion")	
+			}
+			
+		},2000);
+
+	})
+
+	let peticion3=new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			resolve("termino la 3ra peticion")
+		},10000);
+
+	})
+
+	Promise.race([peticion1,peticion2,peticion3])
+	.then((data)=>{
+		console.log(data);
+		console.log("ejecuta el race")
+	});
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBryurBCjqTOdDk4OD_hUZuc3GMXpByD5s",
+    authDomain: "democlase-9be36.firebaseapp.com",
+    databaseURL: "https://democlase-9be36.firebaseio.com",
+    projectId: "democlase-9be36",
+    storageBucket: "",
+    messagingSenderId: "1082219424850",
+    appId: "1:1082219424850:web:64cdbf087f80b717"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+<script>
+  let baseDatos=firebase.database();
+
+  function registrarTarea(nombre,estado){
+  	let tarea={
+  		nombre_tarea:nombre,
+  		estado_tarea:estado
+  	}
+
+  	baseDatos.ref("/tareas").push(tarea);
+
+  }
+
+  registrarTarea("traea5",false);
+
+</script>

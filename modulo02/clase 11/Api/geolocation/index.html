@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Document</title>
+    <style>
+      #mapa{
+        width: 500px;
+        height: 400px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+  <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15604.978050088856!2d-77.0449983!3d-12.0954063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1566955251503!5m2!1ses-419!2spe" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+-->
+  <!--<img src="https://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=14&size=400x400&key=AIzaSyATGQZzpCce9cWZTLhhwTG" alt="">-->
+    <!--<img src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+&markers=color:red%7Clabel:C%7C40.718217,-73.998284
+&key=AIzaSyATGQZzpCce9cWZTLhhwTG-FLcnUUMDDpM
+" alt="">-->
+<div id="mapa"></div>
+  	  <script src="js/main.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4a5buWrjezshCoUJYCH-3L9eP6Y2jSb4&callback="
+    async defer></script>
+    <script>
+      function initMap(){
+        let elemento=document.getElementById("mapa");
+        let options={
+          center:{lat:-12.1025894, lng: -77.0259562},
+          zoom:12
+        }         
+        let mapa=new google.maps.Map(elemento,options);
+        // mapa virtual de lo que estas viendo
+
+
+        let opciones_marker={
+          position:{lat:-12.1025894, lng: -77.0259562},
+          map:mapa
+        }
+
+
+        let marker=new google.maps.Marker(opciones_marker)
+      }
+    </script>
+  </body>
+</html>
+
+<script>
+
+  // naviagator.gelocation
+
+
+/*
+
+	console.log(navigator.geolocation);
+	navigator.geolocation.getCurrentPosition((data)=>{
+		console.log(data);
+	})	
+	
+
+	function geoFindMe() {
+  var output = document.getElementById("out");
+
+  if (!navigator.geolocation){
+    output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    return;
+  }
+
+  function success(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+    var img = new Image();
+    img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+    output.appendChild(img);
+  };
+
+  function error() {
+    output.innerHTML = "Unable to retrieve your location";
+  };
+
+  output.innerHTML = "<p>Locating…</p>";
+
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+*/
+
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	
+	let promesa1=new Promise((resolve,error)=>{
+		// resolve	
+		if(edad>18){
+			resolve()
+		}
+		else{
+			reject();
+		}
+	}).then((data)=>{
+		// promesa se ha ejecutado de manera exitosa
+	})
+	.catch((data)=>{
+		// promesa se ejecuto con error
+	})
+
+
+
+
+	let promesa1=new Promise((resolve,reject)=>{
+		resolve()
+	})
+	promesa1.then();
+	promesa1.catch();
+
+
+
+	function datos(){
+		//
+		return promesa;
+	}
+
+	let obtener=datos();
+
+	obtener.then((data)=>{}).catch((data)=>{})
+
+
+
+	let promesa2=new Promise((resolve,reject)=>{
+		let promesainterna=new Promise();
+		resolve(promesainterna);
+	})
+	.then((data)=>{ return data})
+	.then((valor)=>{ })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

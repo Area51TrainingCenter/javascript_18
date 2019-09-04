@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>	
+	/*
+	let dato=10;
+	console.log(dato);
+	console.log(this);
+	let tamano=this.innerWidth;
+	let ele=this;
+	ele.addEventListener("resize",function(){
+		let tamano=ele.innerWidth;
+
+		if(tamano<600){
+		document.write("<h1>estas en movil</h1>");
+		}else{
+			document.write("<h1>estas en Destop</h1>");
+		}
+	})
+	console.log(this.innerWidth);
+	console.log(this.innerHeight);
+
+
+
+
+	let persona={
+		nombre:"JC",
+		apellido:"RT",
+		nombrecomplet:function(){
+			console.log(this.nombre+this.apellido)
+		},
+		valoresAltas:function(){
+			console.log(this.nombre.toUpperCase());
+		}
+
+	}
+
+
+	function valoresAltas(){
+		this.nombre.toUpperCase();
+	}
+
+*/
+
+
+
+
+
+
+
+	let persona={
+		nombre:"JC",
+		apellido:"RT",
+		nombreCompleto:this.nombre+this.apellido,
+		dato:this,
+		obtenerNombre:function(){
+			console.log(this.nombre+" "+this.apellido);
+
+		}	
+	}
+	console.log(persona.nombreCompleto);
+	console.log(persona.dato);
+	console.log(persona.obtenerNombre());
+
+
+	let persona2={
+		nombre:"JCRT",
+		tarea:function(){
+			this // persona2
+		},
+		perfil:{
+
+			alias:"jc",
+			obtenerPerfil:function(){
+				console.log(this) // obtenerPerfil
+			},
+			puntuacion:{
+
+				logos:function(){
+					this // puntuacion
+				}
+			}
+
+
+		}
+	}
+
+	persona2.perfil.obtenerPerfil();
+	
+	function actualizarNombre(valor1,valor2){
+		this.nombre=valor1;
+	}
+
+	actualizarNombre("Diego"); // error  , this es window
+
+
+	actualizarNombre.call(persona2,"Diego","RT") // actualizar el valor de persona2
+
+
+	actualizarNombre.aplly(persona2,["DIEGO","RT"]) // actualizara el valor de persona
+
+
+
+
+
+
+
+
+
+
+</script>

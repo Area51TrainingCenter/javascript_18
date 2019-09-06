@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+	.fixed-add{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 m-auto pt-5">
+				<h2 class="h3 mb-3">Listado de contactos</h2>
+				<form action="">
+					<div class="form-group">
+						<input type="text" class="form-control">
+					</div>
+					
+						<button class="btn-success btn">Buscar</button>
+				
+				</form>
+				<ul id="lista-contacto" class="list-group mt-4">
+				  <!--<li class="list-group-item">1</li>-->
+				</ul>
+				<div class="fixed-add">
+					<button class="btn btn-warning">Agregar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/clases/usuario.js"></script>
+	<script src="js/listado.js"></script>
+</body>
+</html>

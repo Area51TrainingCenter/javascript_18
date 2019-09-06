@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+
+<script>
+	
+
+
+let contacto={
+	nombre:"juan Carlos",
+	telefono:"987654345",
+	estado:true,
+
+}
+
+let manejador={
+	get(objeto, propiedad){
+		if(propiedad=="telefono")
+		{
+			let datos=objeto[propiedad]
+			datos=datos.split("");
+			datos[8]="*";
+			datos[7]="*";
+			datos[6]="*";
+			return datos.join("");
+		}
+		else if(propiedad=="estado"){
+			if(localStorage.rol=="ADMIN"){
+				return objeto[propiedad]
+			}
+			else{
+				return "no tienes los permisos suficientes"
+			}
+		}
+		else{
+			return objeto[propiedad];
+		}
+	},
+	set(objeto,propiedad,valor){
+		if(propiedad=="estado"){
+			if(valor==true || valor==false){
+				objeto[propiedad]=valor;
+			}
+			else{
+				//console.log("NO se soporta ese valor, debes ingresar un valor entre true o false");
+				throw "no puedes actualizar el estado con un valor distinto a true o false";
+			}
+		}
+		else if(propiedad=="pais"){
+			throw `la propiedad ${propiedad} no existe`;
+		}
+		else{
+			/*console.log(objeto);
+			console.log(propiedad);
+			console.log(valor);*/
+			objeto[propiedad]=valor;
+		}
+		
+	}
+}
+
+let proxyContacto=new Proxy(contacto,manejador);
+
+/*console.log(proxyContacto.telefono); // get
+console.log(proxyContacto.nombre); // get 
+console.log(proxyContacto.estado); //*/
+try{
+	proxyContacto.estado="123"; // throw "Dato no valido"
+	proxyContacto.pais="PERÚ";
+
+}
+catch(e){
+	console.log(e);
+	alert(e);
+	//alert("dato ingresado incorrecto");
+
+}
+
+
+
+
+
+console.log("hola al final del codigo");
+
+
+
+
+
+</script>

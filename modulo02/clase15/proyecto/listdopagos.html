@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+
+	let datos=new FormData();
+
+	datos.append("id_usuario","24");
+
+
+	let url="https://sminnova.com/recurso_clase/api/contacto/pago/id";
+let config={
+	method:"POST",
+	body:datos
+}
+fetch(url,config)
+.then((data)=>{return data.json()})
+.then((data)=>{
+	console.log(data);
+})
+</script>

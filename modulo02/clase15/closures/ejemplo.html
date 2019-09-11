@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam culpa, placeat magni, numquam praesentium unde sapiente voluptatem provident minus a voluptas fugit veritatis corrupti. Totam eum labore quae, iure debitis.</h1>
+	<ul>
+		<li id="fuente12">12px</li>
+		<li id="fuente20">20px</li>
+		<li id="fuente40">40px</li>
+	</ul>
+	
+</body>
+</html>
+<script>
+
+	function makerSize(valor){
+		return function(){
+			document.getElementsByTagName('body')[0].style.fontSize=valor+"px"
+		
+		}
+	}
+
+	let fuente12=makerSize(12); // devuelve la funcion
+	let fuente20=makerSize(20); // devuelve la funcion
+	let fuente40=makerSize(40); // devuelve la funcion
+	let fuente80=makerSize(80);
+
+
+	document.getElementById('fuente12').onclick=fuente12;
+	document.getElementById("fuente20").onclick=fuente20;
+	document.getElementById("fuente40").onclick=fuente40;
+
+	
+</script>

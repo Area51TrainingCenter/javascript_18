@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+
+<script>
+	let persona={
+		nombre:"JC",
+		apellido:"",
+		correo:""
+	}
+
+
+	let obj_map=new Map();
+
+	console.log(obj_map);
+	obj_map.set("nombre","Juan Carlos");
+	obj_map.set("apellido","RT Carlos");
+	obj_map.set("correo","JCarlos@gmail.com");
+	console.log(obj_map);
+
+	console.log(obj_map.get("nombre"));
+	
+	if(obj_map.has("estado")){
+		console.log(obj_map.get("estado"));
+	}
+
+	console.log(obj_map.has("estado"));
+
+
+	let valores=new Set();
+	
+	let valores2=[];
+	valores2.push(1)
+	valores2.push(2)
+	valores2.push(3)
+	valores2.push(4)
+	valores2.push(2)
+
+	// valores2= 5 valores
+
+
+	valores.add(1)
+	valores.add(2)
+	valores.add(3)
+	valores.add(4)
+	valores.add(4)
+	valores.add(5)
+	console.log("valores del objeto size")
+	console.log(valores.size) // cantidad de elementos que existe en el objeto set
+	console.log(valores)
+
+
+	console.log(valores.has(9));
+
+
+	for (let item of valores.values())	
+	{
+		console.log(item);
+	}
+
+
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	
+function* mostrar(){
+		yield 1;
+		yield 1+1;
+		yield 1+5;
+	}
+
+let listado=mostrar();
+console.log(listado.next());
+console.log(listado.next());
+console.log(listado.next());
+console.log(listado.next());
+
+
+function* sumar(valor){
+	yield valor;
+	yield valor+10;
+	yield valor+20;
+}
+
+let datos=dumar(30);
+datos.next(); //30
+datos.next(); //40
+datos.next(); //50
+
+function* recorrido(){
+	yield 1;
+	yield 2;
+	yield* subrecorrido();
+	yield 4;
+}
+
+function* subrecorrido(){
+	yield "Hola entre al sub-recorrido";
+	yield "Estoy dentro de subrecorrido";
+	yield "Estoy saliendo del subrecorrido"
+}
+let prueba=recorrido();
+prueba.next(); //1
+prueba.next(); //2
+prueba.next(); //"Hola entre al sub-recorrido";
+prueba.next(); //"Estoy dentro de subrecorrido";
+prueba.next(); //"Estoy saliendo del subrecorrido"
+prueba.next(); //4
+
+
+
+</script>
